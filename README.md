@@ -22,12 +22,16 @@ docker build -t api-mangalivre .
 
 Rode o Container
 ```bash
-docker build -t api-mangalivre .
+docker run -p 5000:5000 api-mangalivre 
 ````
-Utilize o endpoint
+Utilize o método POST no endpoint
   ```bash
   http://localhost:5000/baixar_manga/<nome-do_manga>/<numero-do-capitulo>
   ````
+Exemplo prático com httpie
+```bash
+http POST http://localhost:5000/baixar_manga/one-piece/10
+```
 ## Observações
 - As imagens são capturadas e alocadas na pasta "Imagens".
 - Uma versão em PDF será gerada no diretório principal da aplicação.
